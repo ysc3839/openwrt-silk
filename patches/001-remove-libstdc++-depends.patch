@@ -1,0 +1,13 @@
+diff --git a/silk/Makefile b/silk/Makefile
+index 199add1..e1a109b 100755
+--- a/silk/Makefile
++++ b/silk/Makefile
+@@ -58,7 +58,7 @@ LDLIBS  += $(call ldlibs-from-libs,$(LIBS))
+ COMPILE.c.cmdline   = $(CC) -c $(CFLAGS) $(ADDED_CFLAGS) -o $@ $<
+ COMPILE.S.cmdline   = $(CC) -c $(CFLAGS) $(ADDED_CFLAGS) -o $@ $<
+ COMPILE.cpp.cmdline = $(CXX) -c $(CFLAGS) $(ADDED_CFLAGS) -o $@ $<
+-LINK.o              = $(CXX) $(LDPREFLAGS) $(LDFLAGS)
++LINK.o              = $(CC) $(LDPREFLAGS) $(LDFLAGS)
+ LINK.o.cmdline      = $(LINK.o) $^ $(LDLIBS) -o $@$(EXESUFFIX) 
+ ARCHIVE.cmdline     = $(AR) $(ARFLAGS) $@ $^ && $(RANLIB) $@
+ 
